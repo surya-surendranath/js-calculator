@@ -1,51 +1,40 @@
 document.addEventListener('DOMContentLoaded',function(){
 
-var keys=document.querySelectorAll('#calculator span');
+var button=document.querySelectorAll('#jscalc span');
 
-for(var i=0;i<keys.length;i++){
-  keys[i].onclick=function(e){
+for(var i=0;i<button.length;i++){
+  button[i].onclick=function(e){
 
-    var input=document.querySelector('.screen');
-    var inputVal=input.innerHTML;
-   console.log(inputVal)
-    var btnVal=this.innerHTML;
+    var display=document.querySelector('.monitor');
+    var displayVal=display.innerHTML;
+   console.log(displayVal)
+    var CurrentVal=this.innerHTML;
 
-    if(btnVal=='C'){
-      input.innerHTML='';
+    if(CurrentVal=='C'){
+      display.innerHTML='';
 
     }
     else{
-      input.innerHTML+=btnVal;
+      display.innerHTML+=CurrentVal;
     }
-    if(btnVal=='='){
-      var equation=inputVal;
+    if(CurrentVal=='='){
+      var equation=displayVal;
       equation=equation.replace(/x/g,'*');
 
       if(equation){
-      input.innerHTML=eval(equation);
+      display.innerHTML=eval(equation);
     decimalAdded=false;
     }
 
-    else if(operators.indexOf(btnVal)>-1){
-      var lastChar=inputVal[inputVal.length-1];
-
-      if(inputVal!="" && operators.indexOf(lastChar)==-1){
-              input.innerHTML+=btnVal;
-      }
-      
-      if(operators.indexOf(lastChar)>-1 && inputVallength >1){
-        input.innerHTML=inputVal.replace(/.$/,btnVal);
-      }
-     
-    }
-    else if(btnVal=="."){
+  
+    else if(CurrentVal=="."){
       if(!decimalAdded){
-        input.innerHTML+=btnVal;
+        display.innerHTML+=CurrentVal;
         decimalAdded=true;
       }
     }
 else{
-  input.innerHTML+=btnVal;
+ display.innerHTML+=CurrentVal;
 }
       
    } 

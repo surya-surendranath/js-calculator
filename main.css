@@ -5,30 +5,36 @@
 }
 html{
   height:100%;
-  background:radial-gradient(circle,#fff 20%, #ccc);
+  background:radial-gradient(circle,#3399ff 20%, #ccc);
   background-size:cover;
 }
-#calculator{
+header.index-header{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
+#jscalc{
   width:325px;
   height:auto;
   margin:100px auto;
   padding:20px 20px 9px;
-  background:linear-gradient(#9dd2ea,#8bceec);
+  background:linear-gradient(#cc6699,#d279a6);
   border-radius:3px;
-  box-shadow: 0px 4px #009de4 0px 10px 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px #d279a6 0px 10px 15px rgba(0,0,0,0.2);
 }
 
-.top span.clear{
+.main span.empty{
   float:left;
 }
-.top .screen{
+.main .monitor{
   height:40px;
   width:212px;
   background:rgba(0,0,0,0.2);
   float:right;
   border-radius:3px;
-  box-shadow:inset 0px 4px #009de4;;
-
+ 
   /*Typography*/
   font-size:17px;
   line-height:40px;
@@ -37,11 +43,11 @@ html{
   text-align:right;
   letter-spacing:1px;
 }
-.keys, .top{
+.numbers, .main{
 overflow:hidden
 }
 
-.keys span, .top span.clear {
+.numbers span, .main span.empty {
   float:left;
   width:66px;
   height:40px;
@@ -50,7 +56,7 @@ overflow:hidden
   margin:0 7px 11px 0;
   line-height:40px;
   text-align:center;
-  box-shadow:0px 4px #009de4;
+  box-shadow:0px 4px #0000ff;
   cursor:pointer;
 
   /*prevent selection of text inside keys*/
@@ -59,34 +65,34 @@ overflow:hidden
 }
 
 
-.keys span.operator{
+.numbers span.operator{
 background: #FFF0F5;
 margin-right:0;
 }
-.keys span.eval{
-  background:#f1ff92;
-  box-shadow: 0px 4px #9da853;
+.numbers span.eval{
+  background:white;
+  box-shadow: 0px 4px blue;
   color:#888e5f;
 }
-.top span.clear{
-  background:#ff9fa8;
+.main span.empty{
+  background:#0000ff;
   box-shadow: 0px 4px #9da853;
   color:white;
 }
 
 
 
-.keys span:hover{
+.numbers span:hover{
 background: #9c89f6;
 box-shadow: 0px 4px #6b54d3;
 color:white;
 }
-.keys span.eval:hover{
+.numbers span.eval:hover{
   background:#abb850;
   box-shadow: 0px 4px #717a3;
   color:#888e5f;
 }
-.top span.clear:hover{
+.main span.clear:hover{
   background:#f68991;
   box-shadow: 0px 4px #d3545d;
   color:white;
